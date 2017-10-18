@@ -11,21 +11,28 @@ gem 'active_model_serializers'
 gem 'sidekiq'
 gem 'sinatra', require: false
 gem 'figaro'
-
-
-gem 'coffee-rails', '~> 4.2'
+gem "therubyracer"
+gem 'sprockets', '~> 3.0'
 gem 'turbolinks', '~> 5'
-
 gem 'jbuilder', '~> 2.5'
+gem 'puma', '~> 3.7'
+gem 'bootstrap-sass', '3.3.7'
+gem 'coffee-rails', '4.2.2'
+gem 'uglifier',     '3.2.0'
 
 group :development, :test do
   gem 'sqlite3'
-  gem 'rspec-rails', '~> 3.6'
+
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
-  gem 'rspec-rails', '~> 3.6'
   gem 'factory_girl_rails'
   gem 'selenium-webdriver'
+  gem 'rspec-rails', '~> 3.6'
 end
+group :test do
+  gem "shoulda-matchers", require: false
+end
+
+
 group :production do
   gem 'pg'
 end
@@ -38,3 +45,4 @@ end
 
 
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+

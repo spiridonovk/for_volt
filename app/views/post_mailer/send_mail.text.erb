@@ -1,0 +1,19 @@
+Привет медвед
+
+<table>
+  <tr>
+    <th>Nickname</th>
+    <th>email</th>
+    <th>count</th>
+  </tr>
+
+  <% @arr.each do |line| %>
+  <tr>
+   <td> <%=line[:nickname]%> </td>
+    <td><%=line[:email]%> </td>
+    <td><%=line[:posts]%> </td>
+
+  </tr>
+  <% end %>
+</table>
+

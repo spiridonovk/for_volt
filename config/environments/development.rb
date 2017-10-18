@@ -7,7 +7,9 @@ Rails.application.configure do
   config.cache_classes = false
 
   # Do not eager load code on boot.
-  config.eager_load = false
+  config.eager_load = true
+
+
 
   # Show full error reports.
   config.consider_all_requests_local = true
@@ -27,7 +29,17 @@ Rails.application.configure do
   end
 
   # Don't care if the mailer can't send.
-  config.action_mailer.raise_delivery_errors = false
+  config.action_mailer.raise_delivery_errors = true
+
+   ActionMailer::Base.smtp_settings = {
+   :address => "smtp.gmail.com",
+   :port => '587',
+   :domain => "localhost:3000",
+   :authentication => "plain",
+   :user_name => ENV['USER_NAME'],
+   :password => ENV['PASSWORD'],
+   :enable_starting_auto => true
+ }
 
   config.action_mailer.perform_caching = false
 
