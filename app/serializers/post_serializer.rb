@@ -3,7 +3,7 @@ class PostSerializer < ActiveModel::Serializer
   attributes :id, :title, :body, :published_at, :author
 
   def published_at
-object.published_at.strftime("%d/%m/%Y  at %I:%M%p")
+    object.published_at.strftime("%d/%m/%Y  at %I:%M%p")
   end
 
 end
