@@ -1,12 +1,13 @@
 
 <div class="center">
-  <h1>Здравствуйте, <%= current_user.nickname %></h1>
+  <h1>Здравствуйте, <%= @user.nickname %></h1>
 
   <p> Ваш токен <%=@user.token %> </p>
 </div>
 <%= image_tag @user.avatar.thumb.url if @user.avatar?   %>
 <%= form_for @user do |f| %>
-  Загрузите вашу картинку: <br> <%= f.file_field  :avatar, class: "center" %><br>
+  Загрузите вашу картинку: <br>
+  <%= f.file_field  :avatar, class: "center" %>  <br>
 
 <%= f.submit "Загрузить", class:"btn btn-Primary" %>
 <% end %>
